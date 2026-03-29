@@ -1,0 +1,138 @@
+.item{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+.item.active{
+    display: block;
+    background-color: var(--background);
+}
+
+.item .title{
+    font-size: 13rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    
+}
+
+.item #titles{              /*esse e so do abacate por causa do titulo ajustes personalizados*/
+    font-size: 13rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;   
+    transform: translate(calc(-50% - 29px), -50%);
+    z-index: 1;
+    text-shadow: -4px 6px 30px rgba(255, 255, 255, 0.359)
+}
+
+.item .title .texto{
+    text-shadow: -4px 6px 30px rgba(255, 255, 255, 0.359);
+}
+
+.item .fruit{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 0;
+     left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.item .refri{
+    width: 600px;
+     position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+
+}
+
+#back , #next{
+    background-color: #eee9;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    border: 1px solid #eee9;
+    color: #eee;
+    font-size: x-large;
+    font-family: monospace;
+    cursor: pointer;
+    z-index: 4;
+    transition: all 0.2s ease;
+    
+}
+
+#next{
+    right: 30px
+
+}
+
+#back{
+   left: 30px;
+}
+
+#back:hover,
+#next:hover{
+    transform: translatey(calc(-50% - 2px));
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.426);
+}
+
+
+#back:active,
+#next:active{
+    transform: translateY(-17px) scale(0.96);
+    background-color: rgba(0, 0, 0, 0.651);
+}
+
+
+
+
+
+
+
+
+
+
+
+@keyframes toActivefruit{
+    from{
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+@keyframes toActive{
+    from{
+        top: -50%;
+        opacity: 0;
+    }
+}
+
+.item.active img.fruit{
+    animation: toActivefruit 1s ease-in-out 1;
+}
+
+.item.active .title,
+.item #titles {
+    animation: toActive 2s ease-in-out 1;
+}
+
